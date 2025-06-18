@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWS EXAM 20</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .timer {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #232f3e;
+      color: #fff;
+      padding: 20px 28px;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 10px;
+      z-index: 1000;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 0 4px rgba(255,153,0, 0.3);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 100px auto 60px;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #232f3e;
+    }
+
+    .question {
+      background: #f9f9f9;
+      border: 3px solid #ff9900;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideIn 0.6s ease forwards;
+    }
+
+    .question:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    .question:nth-child(odd) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .question p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #232f3e;
+    }
+
+    label {
+      display: block;
+      background: #fff;
+      border: 1px solid #ccc;
+      margin: 10px 0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    label:hover {
+      background-color: #ffe9cc;
+      border-color: #ff9900;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 12px;
+      transform: scale(1.2);
+    }
+
+    button {
+      background-color: #ff9900;
+      color: #232f3e;
+      padding: 14px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      margin: 30px auto 10px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e48e00;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .correct {
+      color: green;
+      margin: 6px 0;
+    }
+
+    .incorrect {
+      color: red;
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="timer" id="timer">90:00</div>
+  <div class="container">
+    <h1>AWS CLOUD PRACTIONER EXAM</h1>
+    <form id="quizForm">
+
+    <div class="question" data-correct="C">
+      <p>Q1: Which AWS service helps identify malicious or unauthorized activities in AWS accounts and workloads?</p>
+      <label><input type="radio" name="q1" value="A">a. - Amazon Rekognition</label>
+      <label><input type="radio" name="q1" value="B">b. - AWS Trusted Advisor</label>
+      <label><input type="radio" name="q1" value="C">c. - Amazon GuardDuty</label>
+      <label><input type="radio" name="q1" value="D">d. - Amazon CloudWatch</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q2: Under the AWS shared responsibility model, the security and patching of the guest operating system is the responsibility of:</p>
+      <label><input type="radio" name="q2" value="A">a. - AWS Support</label>
+      <label><input type="radio" name="q2" value="B">b. - the customer</label>
+      <label><input type="radio" name="q2" value="C">c. - AWS Systems Manager</label>
+      <label><input type="radio" name="q2" value="D">d. - AWS Config</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q3: What is one of the core principles to follow when designing a highly available application in the AWS Cloud?</p>
+      <label><input type="radio" name="q3" value="A">a. - Design using a serverless architecture</label>
+      <label><input type="radio" name="q3" value="B">b. - Assume that all components within an application can fail</label>
+      <label><input type="radio" name="q3" value="C">c. - Design AWS Auto Scaling into every application</label>
+      <label><input type="radio" name="q3" value="D">d. - Design all components using open-source code</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q4: Which AWS service will help users determine if an application running on an Amazon EC2 instance has sufficient CPU capacity?</p>
+      <label><input type="radio" name="q4" value="A">a. - Amazon CloudWatch</label>
+      <label><input type="radio" name="q4" value="B">b. - AWS Config</label>
+      <label><input type="radio" name="q4" value="C">c. - AWS CloudTrail</label>
+      <label><input type="radio" name="q4" value="D">d. - Amazon Inspector</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q5: Which AWS Cloud best practice uses the elasticity and agility of cloud computing?</p>
+      <label><input type="radio" name="q5" value="A">a. - Provision capacity based on past usage and theoretical peaks</label>
+      <label><input type="radio" name="q5" value="B">b. - Dynamically and predictively scale to meet usage demands</label>
+      <label><input type="radio" name="q5" value="C">c. - Build the application and infrastructure in a data center that grants physical access</label>
+      <label><input type="radio" name="q5" value="D">d. - Break apart the application into loosely coupled components</label>
+    </div>
+    
+    <div class="question" data-correct="BC">
+      <p>Q6: A web application is hosted on AWS using an Elastic Load Balancer, multiple Amazon EC2 instances, and Amazon RDS. <br/> Which security measures fall under the responsibility of AWS? (Choose two.)</p>
+      <label><input type="radio" name="q6" value="A">a. - Running a virus scan on EC2 instances</label>
+      <label><input type="radio" name="q6" value="B">b. - Protecting against IP spoofing and packet sniffing</label>
+      <label><input type="radio" name="q6" value="C">c. - Installing the latest security patches on the RDS instance</label>
+      <label><input type="radio" name="q6" value="D">d. - Encrypting communication between the EC2 instances and the Elastic Load Balancer</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q7: Which AWS feature or service can be used to capture information about incoming and outgoing traffic in an AWS VPC infrastructure?</p>
+      <label><input type="radio" name="q7" value="A">a. - AWS Config</label>
+      <label><input type="radio" name="q7" value="B">b. - VPC Flow Logs</label>
+      <label><input type="radio" name="q7" value="C">c. - AWS Trusted Advisor</label>
+      <label><input type="radio" name="q7" value="D">d. - AWS CloudTrail</label>
+    </div>
+    
+    <div class="question" data-correct="AB">
+      <p>Q8: Which AWS services may be scaled using AWS Auto Scaling? (Choose two.)</p>
+      <label><input type="radio" name="q8" value="A">a. - Amazon EC2</label>
+      <label><input type="radio" name="q8" value="B">b. - Amazon DynamoDB</label>
+      <label><input type="radio" name="q8" value="C">c. - Amazon S3</label>
+      <label><input type="radio" name="q8" value="D">d. - Amazon Route 53</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q9: A Cloud Practitioner identifies a billing issue after examining the AWS Cost and Usage report in the AWS Management Console. <br/> Which action can be taken to resolve this?</p>
+      <label><input type="radio" name="q9" value="A">a. - Open a detailed case related to billing and submit it to AWS Support for help.</label>
+      <label><input type="radio" name="q9" value="B">b. - Upload data describing the issue to a new object in a private Amazon S3 bucket.</label>
+      <label><input type="radio" name="q9" value="C">c. - Create a pricing application and deploy it to a right-sized Amazon EC2 instance for more information.</label>
+      <label><input type="radio" name="q9" value="D">d. - Proceed with creating a new dashboard in Amazon QuickSight.</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q10: Which AWS service makes it easy to create and manage AWS users and groups, and provide them with secure access to AWS resources at no charge?</p>
+      <label><input type="radio" name="q10" value="A">a. - AWS Direct Connect</label>
+      <label><input type="radio" name="q10" value="B">b. - Amazon Connect</label>
+      <label><input type="radio" name="q10" value="C">c. - AWS Identity and Access Management (IAM)</label>
+      <label><input type="radio" name="q10" value="D">d. - AWS Firewall Manager</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q11: The ability to horizontally scale Amazon EC2 instances based on demand is an example of which concept in the AWS Cloud value proposition?</p>
+      <label><input type="radio" name="q11" value="A">a. - Economy of scale</label>
+      <label><input type="radio" name="q11" value="B">b. - Elasticity</label>
+      <label><input type="radio" name="q11" value="C">c. - High availability</label>
+      <label><input type="radio" name="q11" value="D">d. - Agility</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q12: What does the AWS Simple Monthly Calculator do?</p>
+      <label><input type="radio" name="q12" value="A">a. - Compares on-premises costs to colocation environments</label>
+      <label><input type="radio" name="q12" value="B">b. - Estimates monthly billing based on projected usage</label>
+      <label><input type="radio" name="q12" value="C">c. - Estimates power consumption at existing data centers</label>
+      <label><input type="radio" name="q12" value="D">d. - Estimates CPU utilization</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q13: Which method helps to optimize costs of users moving to the AWS Cloud?</p>
+      <label><input type="radio" name="q13" value="A">a. - Paying only for what is used</label>
+      <label><input type="radio" name="q13" value="B">b. - Purchasing hardware before it is needed</label>
+      <label><input type="radio" name="q13" value="C">c. - Manually provisioning cloud resources</label>
+      <label><input type="radio" name="q13" value="D">d. - Purchasing for the maximum possible load</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q14: Which AWS service provides on-demand of AWS security and compliance documentation?</p>
+      <label><input type="radio" name="q14" value="A">a. - AWS Directory Service</label>
+      <label><input type="radio" name="q14" value="B">b. - AWS Artifact</label>
+      <label><input type="radio" name="q14" value="C">c. - AWS Trusted Advisor</label>
+      <label><input type="radio" name="q14" value="D">d. - Amazon Inspector</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q15: An application runs on multiple Amazon EC2 instances that access a shared file system simultaneously. <br/> Which AWS storage service should be used?</p>
+      <label><input type="radio" name="q15" value="A">a. - Amazon EBS</label>
+      <label><input type="radio" name="q15" value="B">b. - Amazon EFS</label>
+      <label><input type="radio" name="q15" value="C">c. - Amazon S3</label>
+      <label><input type="radio" name="q15" value="D">d. - AWS Artifact</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q16: Which Amazon EC2 pricing model should be used to comply with per-core software license requirements?</p>
+      <label><input type="radio" name="q16" value="A">a. - Dedicated Hosts</label>
+      <label><input type="radio" name="q16" value="B">b. - On-Demand Instances</label>
+      <label><input type="radio" name="q16" value="C">c. - Spot Instances</label>
+      <label><input type="radio" name="q16" value="D">d. - Reserved Instances</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q17: Which tasks are the customer's responsibility in the AWS shared responsibility model? (Choose two.)</p>
+      <label><input type="radio" name="q17" value="A">a. - Infrastructure facilities access management</label>
+      <label><input type="radio" name="q17" value="B">b. - Cloud infrastructure hardware lifecycle management</label>
+      <label><input type="radio" name="q17" value="C">c. - Configuration management of user's applications</label>
+      <label><input type="radio" name="q17" value="D">d. - Networking infrastructure protection</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q18: Under the AWS shared responsibility model, which of the following is a customer responsibility?</p>
+      <label><input type="radio" name="q18" value="A">a. - Installing security patches for the Xen and KVM hypervisors</label>
+      <label><input type="radio" name="q18" value="B">b. - Installing operating system patches for Amazon DynamoDB</label>
+      <label><input type="radio" name="q18" value="C">c. - Installing operating system security patches for Amazon EC2 database instances</label>
+      <label><input type="radio" name="q18" value="D">d. - Installing operating system security patches for Amazon RDS database instances</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q19: Each department within a company has its own independent AWS account and its own payment method. New company leadership wants to centralize departmental governance and consolidate payments. <br/> How can this be achieved using AWS services or features?</p>
+      <label><input type="radio" name="q19" value="A">a. - Forward monthly invoices for each account. Then create IAM roles to allow cross-account access.</label>
+      <label><input type="radio" name="q19" value="B">b. - Create a new AWS account. Then configure AWS Organizations and invite all existing accounts to join.</label>
+      <label><input type="radio" name="q19" value="C">c. - Configure AWS Organizations in each of the existing accounts. Then link all accounts together.</label>
+      <label><input type="radio" name="q19" value="D">d. - Use Cost Explorer to combine costs from all accounts. Then replicate IAM policies across accounts.</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q20: Which service can be used to monitor and receive alerts for AWS account root user AWS Management Console sign-in events?</p>
+      <label><input type="radio" name="q20" value="A">a. - Amazon CloudWatch</label>
+      <label><input type="radio" name="q20" value="B">b. - AWS Config</label>
+      <label><input type="radio" name="q20" value="C">c. - AWS Trusted Advisor</label>
+      <label><input type="radio" name="q20" value="D">d. - AWS IAM</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q21: Which design principle should be considered when architecting in the AWS Cloud?</p>
+      <label><input type="radio" name="q21" value="A">a. - Think of servers as non-disposable resources</label>
+      <label><input type="radio" name="q21" value="B">b. - Use synchronous integration of services</label>
+      <label><input type="radio" name="q21" value="C">c. - Design loosely coupled components</label>
+      <label><input type="radio" name="q21" value="D">d. - Implement the least permissive rules for security groups</label>
+    </div>
+    
+    <div class="question" data-correct="BC">
+      <p>Q22: The AWS Cost Management tools give users the ability to do which of the following? (Choose two.)</p>
+      <label><input type="radio" name="q22" value="A">a. - Terminate all AWS resources automatically if budget thresholds are exceeded.</label>
+      <label><input type="radio" name="q22" value="B">b. - Break down AWS costs by day, service, and linked AWS account.</label>
+      <label><input type="radio" name="q22" value="C">c. - Create budgets and receive notifications if current of forecasted usage exceeds the budgets.</label>
+      <label><input type="radio" name="q22" value="D">d. - Switch automatically to Reserved Instances or Spot Instances, whichever is most cost-effective.</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q23: A company needs an Amazon S3 bucket that cannot have any public objects due to compliance requirements. <br/> How can this be accomplished?</p>
+      <label><input type="radio" name="q23" value="A">a. - Enable S3 Block Public Access from the AWS Management Console.</label>
+      <label><input type="radio" name="q23" value="B">b. - Hold a team meeting to discuss the importance if only uploading private S3 objects.</label>
+      <label><input type="radio" name="q23" value="C">c. - Require all S3 objects to be manually approved before uploading.</label>
+      <label><input type="radio" name="q23" value="D">d. - Create a service to monitor all S3 uploads and remove any public uploads.</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q24: An ecommerce company anticipates a huge increase in web traffic for two very popular upcoming shopping holidays. <br/> Which AWS service or feature can be configured to dynamically adjust resources to meet this change in demand?</p>
+      <label><input type="radio" name="q24" value="A">a. - AWS CloudTrail</label>
+      <label><input type="radio" name="q24" value="B">b. - Amazon EC2 Auto Scaling</label>
+      <label><input type="radio" name="q24" value="C">c. - Amazon Forecast</label>
+      <label><input type="radio" name="q24" value="D">d. - AWS Config</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q25: A company is running an ecommerce application hosted in Europe. To decrease latency for users who access the website from other parts of the world, the company would like to cache frequently accessed static content closer to the users. <br/> Which AWS service will support these requirements?</p>
+      <label><input type="radio" name="q25" value="A">a. - Amazon ElastiCache</label>
+      <label><input type="radio" name="q25" value="B">b. - Amazon CloudFront</label>
+      <label><input type="radio" name="q25" value="C">c. - Amazon Elastic File System (Amazon EFS)</label>
+      <label><input type="radio" name="q25" value="D">d. - Amazon Elastic Block Store (Amazon EBS)</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q26: A company is hosting a web application in a Docker container on Amazon EC2. <br/> AWS is responsible for which of the following tasks?</p>
+      <label><input type="radio" name="q26" value="A">a. - Scaling the web application and services developed with Docker</label>
+      <label><input type="radio" name="q26" value="B">b. - Provisioning or scheduling containers to run on clusters and maintain their availability</label>
+      <label><input type="radio" name="q26" value="C">c. - Performing hardware maintenance in the AWS facilities that run the AWS Cloud</label>
+      <label><input type="radio" name="q26" value="D">d. - Managing the guest operating system, including updates and security patches</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q27: The continual reduction of AWS Cloud pricing is due to:</p>
+      <label><input type="radio" name="q27" value="A">a. - pay-as-you go pricing</label>
+      <label><input type="radio" name="q27" value="B">b. - the AWS global infrastructure</label>
+      <label><input type="radio" name="q27" value="C">c. - economies of scale</label>
+      <label><input type="radio" name="q27" value="D">d. - reserved storage pricing</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q28: A batch workload takes 5 hours to finish on an Amazon EC2 instance. The amount of data to be processed doubles monthly and the processing time is proportional. <br/> What is the best cloud architecture to address this consistently growing demand?</p>
+      <label><input type="radio" name="q28" value="A">a. - Run the application on a bigger EC2 instance size.</label>
+      <label><input type="radio" name="q28" value="B">b. - Switch to an EC2 instance family that better matches batch requirements.</label>
+      <label><input type="radio" name="q28" value="C">c. - Distribute the application across multiple EC2 instances and run the workload in parallel.</label>
+      <label><input type="radio" name="q28" value="D">d. - Run the application on a bare metal EC2 instance.</label>
+    </div>
+    
+    <div class="question" data-correct="AD">
+      <p>Q29: Which actions represent best practices for using AWS IAM? (Choose two.)</p>
+      <label><input type="radio" name="q29" value="A">a. - Configure a strong password policy</label>
+      <label><input type="radio" name="q29" value="B">b. - Share the security credentials among users of AWS accounts who are in the same Region</label>
+      <label><input type="radio" name="q29" value="C">c. - Use access keys to log in to the AWS Management Console</label>
+      <label><input type="radio" name="q29" value="D">d. - Rotate access keys on a regular basis</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q30: A user needs to generate a report that outlines the status of key security checks in an AWS account. The report must include:
+    <br/> (The status of Amazon S3 bucket permissions, Whether multi-factor authentication is enabled for the AWS account root user, If any security groups are configured to allow unrestricted access.) <br/> Where can all this information be found in one location?</p>
+      <label><input type="radio" name="q30" value="A">a. - Amazon QuickSight dashboard</label>
+      <label><input type="radio" name="q30" value="B">b. - AWS CloudTrail trails</label>
+      <label><input type="radio" name="q30" value="C">c. - AWS Trusted Advisor report</label>
+      <label><input type="radio" name="q30" value="D">d. - IAM credential report</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q31: Why is it beneficial to use Elastic Load Balancers with applications?</p>
+      <label><input type="radio" name="q31" value="A">a. - They allow for the conversion from Application Load Balancers to Classic Load Balancers.</label>
+      <label><input type="radio" name="q31" value="B">b. - They are capable of handling constant changes in network traffic patterns.</label>
+      <label><input type="radio" name="q31" value="C">c. - They automatically adjust capacity.</label>
+      <label><input type="radio" name="q31" value="D">d. - They are provided at no charge to users.</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q32: Which AWS service should be used to create a billing alarm?</p>
+      <label><input type="radio" name="q32" value="A">a. - AWS Trusted Advisor</label>
+      <label><input type="radio" name="q32" value="B">b. - AWS CloudTrail</label>
+      <label><input type="radio" name="q32" value="C">c. - Amazon CloudWatch</label>
+      <label><input type="radio" name="q32" value="D">d. - Amazon QuickSight</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q33: Which AWS service is a managed NoSQL database?</p>
+      <label><input type="radio" name="q33" value="A">a. - Amazon Redshift</label>
+      <label><input type="radio" name="q33" value="B">b. - Amazon DynamoDB</label>
+      <label><input type="radio" name="q33" value="C">c. - Amazon Aurora</label>
+      <label><input type="radio" name="q33" value="D">d. - Amazon RDS for MariaDB</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q34: Which AWS service enables users to securely connect to AWS resources over the public internet?</p>
+      <label><input type="radio" name="q34" value="A">a. - Amazon VPC peering</label>
+      <label><input type="radio" name="q34" value="B">b. - AWS Direct Connect</label>
+      <label><input type="radio" name="q34" value="C">c. - AWS VPN</label>
+      <label><input type="radio" name="q34" value="D">d. - Amazon Pinpoint</label>
+    </div>
+    
+    <div class="question" data-correct="BD">
+      <p>Q35: Which of the following are benefits of AWS Global Accelerator? (Choose two.)</p>
+      <label><input type="radio" name="q35" value="A">a. - Reduced cost to run services on AWS</label>
+      <label><input type="radio" name="q35" value="B">b. - Improved availability of applications deployed on AWS</label>
+      <label><input type="radio" name="q35" value="C">c. - Higher durability of data stored on AWS</label>
+      <label><input type="radio" name="q35" value="D">d. - Decreased latency to reach applications deployed on AWS</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q36: Which of the AWS global infrastructure is used to cache copies of content for faster delivery to users across the globe?</p>
+      <label><input type="radio" name="q36" value="A">a. - AWS Regions</label>
+      <label><input type="radio" name="q36" value="B">b. - Availability Zones</label>
+      <label><input type="radio" name="q36" value="C">c. - Edge locations</label>
+      <label><input type="radio" name="q36" value="D">d. - Data centers</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q37: Using AWS Config to record, audit, and evaluate changes to AWS resources to enable traceability is an example of which AWS Well-Architected Framework pillar?</p>
+      <label><input type="radio" name="q37" value="A">a. - Security</label>
+      <label><input type="radio" name="q37" value="B">b. - Operational excellence</label>
+      <label><input type="radio" name="q37" value="C">c. - Performance efficiency</label>
+      <label><input type="radio" name="q37" value="D">d. - Cost optimization</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q38: IT systems should be designed to reduce interdependencies, so that a change or failure in one component does not cascade to other components. <br/> This is an example of which principle of cloud architecture design?</p>
+      <label><input type="radio" name="q38" value="A">a. - Scalability</label>
+      <label><input type="radio" name="q38" value="B">b. - Loose coupling</label>
+      <label><input type="radio" name="q38" value="C">c. - Automation</label>
+      <label><input type="radio" name="q38" value="D">d. - Automatic scaling</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q39: Which AWS service or feature can enhance network security by blocking requests from a particular network for a web application on AWS? (Choose two.)</p>
+      <label><input type="radio" name="q39" value="A">a. - AWS WAF</label>
+      <label><input type="radio" name="q39" value="B">b. - AWS Trusted Advisor</label>
+      <label><input type="radio" name="q39" value="C">c. - AWS Direct Connect</label>
+      <label><input type="radio" name="q39" value="D">d. - AWS Organizations</label>
+    </div>
+    
+    <div class="question" data-correct="D">
+      <p>Q40: A user who wants to get help with billing and reactivate a suspended account should submit an account and billing request to:</p>
+      <label><input type="radio" name="q40" value="A">a. - the AWS Support forum</label>
+      <label><input type="radio" name="q40" value="B">b. - AWS Abuse</label>
+      <label><input type="radio" name="q40" value="C">c. - an AWS Solutions Architect</label>
+      <label><input type="radio" name="q40" value="D">d. - AWS Support</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q41: According to the AWS Well-Architected Framework, what change management steps should be taken to achieve reliability in the AWS Cloud? (Choose two.)</p>
+      <label><input type="radio" name="q41" value="A">a. - Use AWS Config to generate an inventory of AWS resources</label>
+      <label><input type="radio" name="q41" value="B">b. - Use service limits to prevent users from creating or making changes to AWS resources</label>
+      <label><input type="radio" name="q41" value="C">c. - Use AWS CloudTrail to record AWS API calls into an auditable log file</label>
+      <label><input type="radio" name="q41" value="D">d. - Use AWS Certificate Manager to whitelist approved AWS resources and services</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q42: Users are reporting latency when connecting to a website with a global customer base. <br/> Which AWS service will improve the customer experience by reducing latency?</p>
+      <label><input type="radio" name="q42" value="A">a. - Amazon CloudFront</label>
+      <label><input type="radio" name="q42" value="B">b. - AWS Direct Connect</label>
+      <label><input type="radio" name="q42" value="C">c. - Amazon EC2 Auto Scaling</label>
+      <label><input type="radio" name="q42" value="D">d. - AWS Transit Gateway</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q43: A company wants to try a third-party ecommerce solution before deciding to use it long term. <br/> Which AWS service or tool will support this effort?</p>
+      <label><input type="radio" name="q43" value="A">a. - AWS Marketplace</label>
+      <label><input type="radio" name="q43" value="B">b. - AWS Partner Network (APN)</label>
+      <label><input type="radio" name="q43" value="C">c. - AWS Managed Services</label>
+      <label><input type="radio" name="q43" value="D">d. - AWS Service Catalog</label>
+    </div>
+    
+    <div class="question" data-correct="A">
+      <p>Q44: Which AWS service can be used to turn text into life-like speech?</p>
+      <label><input type="radio" name="q44" value="A">a. - Amazon Polly</label>
+      <label><input type="radio" name="q44" value="B">b. - Amazon Transcribe</label>
+      <label><input type="radio" name="q44" value="C">c. - Amazon Rekognition</label>
+      <label><input type="radio" name="q44" value="D">d. - Amazon Lex</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q45: Who is responsible for patching the guest operating system for Amazon RDS?</p>
+      <label><input type="radio" name="q45" value="A">a. - The AWS Product team</label>
+      <label><input type="radio" name="q45" value="B">b. - The customer Database Administrator</label>
+      <label><input type="radio" name="q45" value="C">c. - Managed partners</label>
+      <label><input type="radio" name="q45" value="D">d. - AWS Support</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q46: A company wants to use an AWS service to monitor the health of application endpoints, with the ability to route traffic to healthy regional endpoints to improve application availability. <br/> Which service will support these requirements?</p>
+      <label><input type="radio" name="q46" value="A">a. - Amazon Inspector</label>
+      <label><input type="radio" name="q46" value="B">b. - Amazon CloudWatch</label>
+      <label><input type="radio" name="q46" value="C">c. - AWS Global Accelerator</label>
+      <label><input type="radio" name="q46" value="D">d. - Amazon CloudFront</label>
+    </div>
+    
+    <div class="question" data-correct="B">
+      <p>Q47: Which of the following is a component of the AWS Global Infrastructure?</p>
+      <label><input type="radio" name="q47" value="A">a. - Amazon Alexa</label>
+      <label><input type="radio" name="q47" value="B">b. - AWS Regions</label>
+      <label><input type="radio" name="q47" value="C">c. - Amazon Lightsail</label>
+      <label><input type="radio" name="q47" value="D">d. - AWS Organizations</label>
+    </div>
+    
+    <div class="question" data-correct="D">
+      <p>Q48: What is the benefit of elasticity in the AWS Cloud?</p>
+      <label><input type="radio" name="q48" value="A">a. - Ensure web traffic is automatically spread across multiple AWS Regions.</label>
+      <label><input type="radio" name="q48" value="B">b. - Minimize storage costs by automatically archiving log data.</label>
+      <label><input type="radio" name="q48" value="C">c. - Enable AWS to automatically select the most cost-effective services.</label>
+      <label><input type="radio" name="q48" value="D">d. - Automatically adjust the required compute capacity to maintain consistent performance.</label>
+    </div>
+    
+    <div class="question" data-correct="AD">
+      <p>Q49: Which AWS services can be used to move data from on-premises data centers to AWS? (Choose two.)</p>
+      <label><input type="radio" name="q49" value="A">a. - AWS Snowball</label>
+      <label><input type="radio" name="q49" value="B">b. - AWS Lambda</label>
+      <label><input type="radio" name="q49" value="C">c. - AWS ElastiCache</label>
+      <label><input type="radio" name="q49" value="D">d. - AWS Database Migration Service (AWS DMS)</label>
+    </div>
+    
+    <div class="question" data-correct="C">
+      <p>Q50: Which tool is used to forecast AWS spending?</p>
+      <label><input type="radio" name="q50" value="A">a. - AWS Trusted Advisor</label>
+      <label><input type="radio" name="q50" value="B">b. - AWS Organizations</label>
+      <label><input type="radio" name="q50" value="C">c. - Cost Explorer</label>
+      <label><input type="radio" name="q50" value="D">d. - Amazon Inspector</label>
+    </div>
+    
+      <button type="button" onclick="submitQuiz()">Show Result</button>
+    </form>
+    <div id="resultContainer"></div>
+  </div>
+  <script>
+    function submitQuiz() {
+      const questions = document.querySelectorAll('.question');
+      const results = [];
+      let correctCount = 0;
+
+      questions.forEach((question, index) => {
+        const correctAnswers = question.getAttribute('data-correct').split(',');
+        const selectedInputs = question.querySelectorAll('input:checked');
+        const selectedValues = Array.from(selectedInputs).map(input => input.value);
+
+        const resultLine = document.createElement('p');
+
+        if (selectedValues.length === 0) {
+          resultLine.innerHTML = `Question ${index + 1}: ❌ No answer selected (Correct: ${correctAnswers.join(', ')})`;
+          resultLine.classList.add('incorrect');
+        } else if (arraysEqual(selectedValues.sort(), correctAnswers.sort())) {
+          resultLine.innerHTML = `Question ${index + 1}: ✅ Correct`;
+          resultLine.classList.add('correct');
+          correctCount++;
+        } else {
+          resultLine.innerHTML = `Question ${index + 1}: ❌ Incorrect (Selected: ${selectedValues.join(', ')}, Correct: ${correctAnswers.join(', ')})`;
+          resultLine.classList.add('incorrect');
+        }
+
+        results.push(resultLine);
+      });
+
+      const resultContainer = document.getElementById('resultContainer');
+      resultContainer.innerHTML = `<h2>Result Summary</h2><p class="result">You got ${correctCount} out of ${questions.length} correct.</p>`;
+      results.forEach(r => resultContainer.appendChild(r));
+    }
+
+    function arraysEqual(a, b) {
+      return a.length === b.length && a.every((v, i) => v === b[i]);
+    }
+
+    // 90-minute countdown timer
+    let time = 60 * 60;
+    const timerElement = document.getElementById("timer");
+
+    function updateTimer() {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      timerElement.textContent = String(minutes).padStart(2, '0') + ":" + String(seconds).padStart(2, '0');
+      if (time > 0) {
+        time--;
+        setTimeout(updateTimer, 1000);
+      } else {
+        timerElement.textContent = "Time's up!";
+        submitQuiz();
+      }
+    }
+
+    updateTimer();
+  </script>
+</body>
+</html>
