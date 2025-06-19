@@ -1,12 +1,11 @@
-# 🌩️ AWS Cloud Practitioner Practice Exams
-# 🌩️ AWS Cloud Practitioner Practice Quizzes
+# 🌩️ AWS CLOUD PRACTIONER EXAM 
 
 [![Live Site](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge&logo=github)](https://its-nayan.github.io/Aws-Cloud-Practioner-Exam/)
 
 This is a fully responsive, interactive quiz platform built to help learners prepare for the **AWS Certified Cloud Practitioner** exam...
 
 
-👉 [Click to try the quiz website](https://its-nayan.github.io/Aws-Cloud-Practioner-Exam/)  
+👉 [CLICK HERE TO ACCESS EXAM](https://its-nayan.github.io/Aws-Cloud-Practioner-Exam/)  
 ---
 
 ## 📦 Features
